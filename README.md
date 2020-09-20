@@ -41,6 +41,7 @@ Because this problem is embarassingly parallel & compute bound, we should expect
 as each thread can have its own core. There is a little bit of a subtlety because if you actually print the output to standard out, you may become
 I/O bound. So to test scaling, I commented out the line in `bin.rs` that prints to stdout, and timed the code e,g, `$ time ./primes_cli -N 1 2000000 5000000`
 on my macbook with a 2.5 GHz Quad-Core Intel Core i7, changing number of threads from 1 to 4. The results are plotted below
+
 ![Strong Scaling](scaling_info/strong_scaling.png)
 
 As you can see, the problem scales nearly ideally. 
