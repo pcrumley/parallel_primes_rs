@@ -1,6 +1,7 @@
 use anyhow::{Result, Context};
 use clap::{App, Arg};
 use primes_lib::primes;
+
 struct Config {
     start: u64,
     stop: u64,
@@ -68,6 +69,8 @@ number of threads equal to the number of cpu cores.")
     if let Some(n) = config.num_threads {
         rayon::ThreadPoolBuilder::new().num_threads(n).build_global().unwrap();
     }
-    println!("{:?}", primes(config.start, config.stop)?);
+
+    let result = primes(config.start, config.stop)?;
+    println!("{:?}", result);
     Ok(())
 }

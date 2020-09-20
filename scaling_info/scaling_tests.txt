@@ -1,0 +1,13 @@
+The raw bash output to my scaling tests.
+# 1 thread
+prompt % time ./target/release/primes_cli 2000000 5000000 -N 1
+-> /target/release/primes_cli 2000000 5000000 -N 1  4.07s user 0.01s system 99% cpu 4.088 total
+
+# 2 threads
+-> ./target/release/primes_cli 2000000 5000000 -N 2  4.05s user 0.01s system 199% cpu 2.040 total
+
+# 3 threads
+./target/release/primes_cli 2000000 5000000 -N 3  4.13s user 0.01s system 298% cpu 1.387 total
+
+# 4 threads
+./target/release/primes_cli 2000000 5000000 -N 4  4.19s user 0.01s system 388% cpu 1.083 tota;

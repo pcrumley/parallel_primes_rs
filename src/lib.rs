@@ -52,7 +52,10 @@ pub fn primes(start: u64, stop: u64) -> Result<Vec<u64>> {
     ensure!(stop >= start, "Start cannot be greater than stop.");
     // there are no primes less than 2 so need to
     // start there.
+
     let start = start.max(2);
+
+    // here is where parallelism happens.
     Ok((start..=stop).into_par_iter()
         .filter_map(|n| {
             if is_prime(n) { Some(n) }
