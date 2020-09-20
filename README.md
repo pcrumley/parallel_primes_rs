@@ -33,7 +33,7 @@ $ ./primes_cli -h
 This program uses a typical rust project structure containing library `./src/lib.rs` and a binary file `./src/bin.rs`. To build 
 the program run `cargo build --release` and you will create an executable at `./target/release/primes_cli`
 
-You can also run the automated test by running `cargo test --release`
+You can also run the automated tests by running `cargo test --release`
 
 ## Strong Scaling Test
 
