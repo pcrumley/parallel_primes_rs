@@ -37,7 +37,7 @@ pub fn is_prime(num: u64) -> bool {
 /// The function prime returns a Result that contains
 /// a vec of all u64 that are prime between start and stop.
 ///
-/// It throws an error if
+/// It throws an error if stop < start
 ///
 /// # Example
 ///
