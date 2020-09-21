@@ -15,7 +15,7 @@ prints
 [11, 13, 17, 19]
 ```
 
-The algorithm to determine if a number is prime naïve brute force, with some care to avoid overflow errors.
+The algorithm to determine if a number is prime is naïve brute force, with some care to avoid overflow errors.
 It uses a work-stealing threadpool provided by `rayon` and the default is to set the number of threads equal
 to the number of physical cores available, but you can change this by calling e.g.
 
@@ -38,8 +38,8 @@ You can also run the automated tests by running `cargo test --release`
 ## Strong Scaling Test
 
 Because this problem is embarassingly parallel & compute bound, we should expect the program to scale nearly ideally (~num of threads) as long
-as each thread can have its own core. There is a little bit of a subtlety because if you actually print the output to standard out, you may become
-I/O bound. So to test scaling, I commented out the line in `bin.rs` that prints to stdout, and timed the code e,g, `$ time ./primes_cli -N 1 2000000 5000000`
+as each thread can have its own core. There is a little bit of a subtlety because if you actually print the output to the terminal, you may become
+I/O bound. So to test scaling, I commented out the line in `bin.rs` that prints to stdout, and timed the code e.g., `$ time ./primes_cli -N 1 2000000 5000000`
 on my macbook with a 2.5 GHz Quad-Core Intel Core i7, changing number of threads from 1 to 4. The results are plotted below
 
 ![Strong Scaling](scaling_info/strong_scaling.png)
