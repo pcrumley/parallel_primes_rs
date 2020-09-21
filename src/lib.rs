@@ -66,31 +66,32 @@ pub fn primes(start: u64, stop: u64) -> Result<Vec<u64>> {
 
 #[cfg(test)]
 mod tests {
+
     #[test]
     fn not_prime() {
         // A couple of tricky tests that are not prime
-        assert_eq!(false, super::is_prime(1000));
-        assert_eq!(false, super::is_prime(1));
-        assert_eq!(false, super::is_prime(0));
+        assert_eq!(false, crate::is_prime(1000));
+        assert_eq!(false, crate::is_prime(1));
+        assert_eq!(false, crate::is_prime(0));
     }
     #[test]
     fn is_prime() {
         // A couple of tricky tests that are primes
-        assert_eq!(true, super::is_prime(2));
-        assert_eq!(true, super::is_prime(3));
-        assert_eq!(true, super::is_prime(31));
+        assert_eq!(true, crate::is_prime(2));
+        assert_eq!(true, crate::is_prime(3));
+        assert_eq!(true, crate::is_prime(31));
     }
 
     #[test]
     fn check_primes_func() {
         // not empty
-        assert_eq!(vec![2, 3, 5, 7], super::primes(0, 7).unwrap());
+        assert_eq!(vec![2, 3, 5, 7], crate::primes(0, 7).unwrap());
 
         // empty because start == end and start is not prime
-        assert_eq!(Vec::<u64>::default(), super::primes(10, 10).unwrap());
+        assert_eq!(Vec::<u64>::default(), crate::primes(10, 10).unwrap());
 
         // empty because no primes
-        assert_eq!(Vec::<u64>::default(), super::primes(32, 36).unwrap());
+        assert_eq!(Vec::<u64>::default(), crate::primes(32, 36).unwrap());
     }
 
 
@@ -98,6 +99,6 @@ mod tests {
     #[should_panic]
     fn stop_less_than_start() {
         // not empty
-        super::primes(10, 7).unwrap();
+        crate::primes(10, 7).unwrap();
     }
 }
