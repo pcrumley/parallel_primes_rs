@@ -1,5 +1,5 @@
 use rayon::prelude::*;
-use anyhow::{ Result, ensure};
+use anyhow::{ Result, ensure };
 
 ///
 /// The function is_prime takes an integer as its argument
